@@ -27,3 +27,4 @@ node_modules
 # Bower Dependencies
 bower/components
 app/bower_components
+app/temp

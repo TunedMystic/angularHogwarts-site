@@ -1,0 +1,54 @@
+<div> <!-- Main panel -->
+  
+  <div>
+  
+    <p>
+      <label>First name:</label>
+      <input type="text" ng-model="searchParams.name.first">
+    </p>
+    
+    <p>
+      <label>Last name:</label>
+      <input type="text" ng-model="searchParams.name.last">
+    </p>
+    
+    <p>
+      <ul>
+      
+        <li>
+          <label>Gryffindor</label>
+          <input type="checkbox" ng-true-value="Gryffindor" ng-false-value="''" ng-model="searchParams.school.house.gryffindor">
+        </li>
+        
+        <li>
+          <label>Hufflepuff</label>
+          <input type="checkbox" ng-true-value="Hufflepuff" ng-false-value="''" ng-model="searchParams.school.house.hufflepuff">
+        </li>
+        
+        <li>
+          <label>Ravenclaw</label>
+          <input type="checkbox" ng-true-value="Ravenclaw" ng-false-value="''" ng-model="searchParams.school.house.ravenclaw">
+        </li>
+        
+        <li>
+          <label>Slytherin</label>
+          <input type="checkbox" ng-true-value="Slytherin" ng-false-value="''" ng-model="searchParams.school.house.slytherin">
+        </li>
+        
+      </ul>
+      {{ searchParams }}
+    </p>
+    
+    <p class="well">{{ status }}</p>
+  </div>
+
+
+  <div>
+    <!-- Filter the students before displaying them -->
+    <ul ng-repeat="s in students | houseFilter:'school.house':searchParams.school.house">
+      <li>
+        <p> {{ s.name.first }} {{s.name.last }}</p>
+      </li>
+    </ul>
+  </div>
+</div> <!-- /Main panel -->
