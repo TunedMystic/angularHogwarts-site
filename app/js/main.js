@@ -62,19 +62,26 @@
     
   }]);
   
-  app.filter("houseFilter", function() {
+  
+  app.filter("studentHouseFilter", function() {
     
     return function(items, searchModel) {
       var out = [];
       
       // Get the names of the houses.
-      var houseNames = _.keys(searchModel);
+      var houseNames = _.keys(searchModel);      
+      
       // Discard the house(s) which point to a false value.
       _.each(searchModel, function(value, key) {
         if(value === false)
           // Cut the value out.
           houseNames.splice(houseNames.indexOf(key), 1);
       });
+      
+      // If 'searchModel' has no data in it, then return nothing.
+      if(houseNames.length === 0) return out;
+      // If 'searchModel' has all the data in it, then return everything.
+      if(houseNames.length === 4) return items;
       
       // Add the item if it's house is in the list 'houseNames'.
       _.each(items, function(el, idx) {
@@ -87,50 +94,30 @@
     
   });
   
-  app.filter("studentsFilter", function() {
+  
+  app.filter("studentNameFilter", function() {
     
     return function(items, searchModel) {
-      console.log("searchModel " + JSON.stringify(searchModel));
       var out = [];
+      var studentNames = _.values(searchModel);
       
-      if(!searchModel) return items;
+      // If no names are given, then return everything.
+      if(_.isEqual(studentNames, ['', ''])) return items;
       
-      /// Function to check if a property exists in an object.
-      var isProp = function(prop) {
-        return typeof(prop) !== "undefined";
-      }
-      
-      var lower = function(s) {
-        return s.toLowerCase();
-      }
-      
-      var propFname = isProp(searchModel.name) && isProp(searchModel.name.first);
-      var propLname = isProp(searchModel.last) && isProp(searchModel.name.last);
-      var propSchool = isProp(searchModel.school) && isProp(searchModel.school.house);
-      
-      for(var _i = 0; _i < items.length; _i++) {
+      _.each(items, function(el, idx) {
         var valid = true;
         
-        /// Test each item by the parameters of the search text 'searchModel'.
-        /// A search is valid if there is a substring within the item.
-        if(propFname && valid) {
-          if(lower(items[_i].name.first).indexOf(lower(searchModel.name.first)) === -1)
+        // Check if the search data is a substring of the actual name.
+        if(searchModel.first != "")
+          if(util.lower(el.name.first).indexOf(util.lower(searchModel.first)) === -1)
             valid = false;
-        }
-        if(propLname && valid) {
-          if(lower(items[_i].name.last).indexOf(lower(searchModel.name.last)) === -1)
+        if(searchModel.last != "")
+          if(util.lower(el.name.last).indexOf(util.lower(searchModel.last)) === -1)
             valid = false;
-        }
-        if(propSchool && valid) {
-          if(lower(items[_i].school.house).indexOf(lower(searchModel.school.house)) === -1)
-            valid = false;
-        }
-        
-        /// If the item passes through all filters.
         if(valid)
-          out.push(items[_i]);
-        
-      }
+          
+          out.push(el);
+      });
       
       return out;
     }

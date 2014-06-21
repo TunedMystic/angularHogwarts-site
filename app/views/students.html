@@ -4,12 +4,12 @@
   
     <p>
       <label>First name:</label>
-      <input type="text" ng-model="searchParams.name.first">
+      <input type="text" ng-model="searchName.first">
     </p>
     
     <p>
       <label>Last name:</label>
-      <input type="text" ng-model="searchParams.name.last">
+      <input type="text" ng-model="searchName.last">
     </p>
     
     <p>
@@ -46,7 +46,7 @@
 
   <div>
     <!-- Filter the students before displaying them -->
-    <ul ng-repeat="s in students | houseFilter:searchHouse">
+    <ul ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName">
       <li>
         <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }}</p>
       </li>
