@@ -1,4 +1,4 @@
-simpleAngular
+Angular Hogwarts
 =============
 
-A simple starter project for small angular apps or quick tests.
+View information on the students of Hogwarts through an angular app!
