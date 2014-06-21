@@ -97,7 +97,21 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.Gryffindor {
+    color: #EB2A3D;
+}
 
+.Hufflepuff {
+    color: #EBB12A;
+}
+
+.Ravenclaw {
+    color: #2A84EB;
+}
+
+.Slytherin {
+    color: #11A828;
+}
 
 
 

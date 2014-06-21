@@ -32,6 +32,10 @@ util = (function() {
       var res = this.getProp(obj, path);
       
       return typeof(res) !== "undefined";
+    },
+    
+    lower: function(s) {
+      return s.toLowerCase();
     }
   };
 })();

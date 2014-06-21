@@ -17,26 +17,27 @@
       
         <li>
           <label>Gryffindor</label>
-          <input type="checkbox" ng-true-value="Gryffindor" ng-false-value="''" ng-model="searchParams.school.house.gryffindor">
+          <input type="checkbox" ng-model="searchHouse.Gryffindor">
         </li>
         
         <li>
           <label>Hufflepuff</label>
-          <input type="checkbox" ng-true-value="Hufflepuff" ng-false-value="''" ng-model="searchParams.school.house.hufflepuff">
+          <input type="checkbox" ng-model="searchHouse.Hufflepuff">
         </li>
         
         <li>
           <label>Ravenclaw</label>
-          <input type="checkbox" ng-true-value="Ravenclaw" ng-false-value="''" ng-model="searchParams.school.house.ravenclaw">
+          <input type="checkbox" ng-model="searchHouse.Ravenclaw">
         </li>
         
         <li>
           <label>Slytherin</label>
-          <input type="checkbox" ng-true-value="Slytherin" ng-false-value="''" ng-model="searchParams.school.house.slytherin">
+          <input type="checkbox" ng-model="searchHouse.Slytherin">
         </li>
         
       </ul>
-      {{ searchParams }}
+      {{ searchName }}
+      {{ searchHouse }}
     </p>
     
     <p class="well">{{ status }}</p>
@@ -45,9 +46,9 @@
 
   <div>
     <!-- Filter the students before displaying them -->
-    <ul ng-repeat="s in students | houseFilter:'school.house':searchParams.school.house">
+    <ul ng-repeat="s in students | houseFilter:searchHouse">
       <li>
-        <p> {{ s.name.first }} {{s.name.last }}</p>
+        <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }}</p>
       </li>
     </ul>
   </div>

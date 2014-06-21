@@ -32,19 +32,19 @@
   
   app.controller("StudentsController", ["$scope", "Faculty", function($scope, Faculty) {
     $scope.students = [];
-    $scope.searchParams = {
-      "name": {
-        "first": "",
-        "last": ""
-      },
-      "school": {
-        "house": {
-          "gryffindor": "Gryffindor",
-          "hufflepuff" : "Hufflepuff",
-          "ravenclaw": "Ravenclaw",
-          "slytherin": "Slytherin"
-        }
-      }
+    
+    // Default configuration for searching names.
+    $scope.searchName = {
+      first: "",
+      last: ""
+    };
+    
+    // Default configuration for searching the houses.
+    $scope.searchHouse = {
+      Gryffindor: true,
+      Hufflepuff : true,
+      Ravenclaw: true,
+      Slytherin: true
     };
     
     getStudents();
@@ -64,23 +64,23 @@
   
   app.filter("houseFilter", function() {
     
-    return function(items, propertyString, searchModel) {
+    return function(items, searchModel) {
       var out = [];
-      var searchStringHouses = _.values(searchModel);
-      console.log("searchStringHouses: " + searchStringHouses);
       
-      console.log("PropertyString: " + propertyString);
-      console.log("searchModel: " + JSON.stringify(searchModel));
+      // Get the names of the houses.
+      var houseNames = _.keys(searchModel);
+      // Discard the house(s) which point to a false value.
+      _.each(searchModel, function(value, key) {
+        if(value === false)
+          // Cut the value out.
+          houseNames.splice(houseNames.indexOf(key), 1);
+      });
       
-      for(var _i = 0; _i < items.length; _i++) {
-        // Get the string of the house of the student.
-        var itemHouse = util.getProp(items[_i], propertyString);
-        //console.log("a student's house: " + itemHouse);
-        if(itemHouse) {
-          if(searchStringHouses.indexOf(itemHouse) != -1)
-            out.push(items[_i]);
-        }
-      }
+      // Add the item if it's house is in the list 'houseNames'.
+      _.each(items, function(el, idx) {
+        if(houseNames.indexOf(el["school"]["house"]) !== -1)
+          out.push(el);
+      });
       
       return out;
     }
