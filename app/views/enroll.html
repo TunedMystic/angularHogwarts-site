@@ -1,0 +1,56 @@
+<div>
+  <div>
+    <form action="">
+      <!-- Name -->
+      <p>
+        <label>Name:</label>
+        <input type="text" placeholder="First" ng-model="newStudent.name.first" required>
+        <input type="text" placeholder="Lase" ng-model="newStudent.name.last"required>
+      </p>
+      
+      <!-- Race -->
+      <p>
+        <label>Race:</label>
+        <select name="races" required>
+          <option value=""></option>
+          <option ng-repeat="r in races" value="{{ r }}" ng-model="newStudent.race">{{ r }}</option>
+        </select>
+      </p>
+      
+      <!-- Gender -->
+      <p>
+        <label>Gender: </label>
+        <div ng-repeat="g in genders">
+          <label>{{ g }}</label>
+          <input name="gender" type="radio" value="{{ g }}" ng-model="newStudent.gender" required>
+        </div> 
+      </p>
+      
+      <!-- House -->
+      <p>
+        <label>House: </label>
+        <select name="houses" required>
+          <option value=""></option>
+          <option ng-repeat="h in houses" value="{{ h }}" ng-model="newStudent.school.house">{{ h }}</option>
+        </select>
+      </p>
+      
+      <!-- Year -->
+      <p>
+        <label>Year: </label>
+        <input type="number" placeholder="1" min="1" max="7" ng-model="newStudent.school.year" required>
+      </p>
+      
+      
+      <!-- This is the correct way to use the <select> tag in AngularJS. -->
+      <!-- <p>
+        <select ng-model="newStudent.school.house" ng-options="x for x in houses"></select>
+      </p> -->
+      
+      <button type="submit">Sumbit</button>
+      
+      <h2>{{ newStudent }}</h2>
+      
+    </form>
+  </div>
+</div>

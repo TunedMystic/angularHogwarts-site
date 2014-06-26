@@ -10,6 +10,10 @@
 			templateUrl: "views/students.html",
 			controller: "StudentsController"
 		})
+    .when("/enroll", {
+      templateUrl: "views/enroll.html",
+      controller: "EnrollController"
+    })
 		.otherwise({
 			templateUrl: "views/app404.html"
 		});
@@ -49,6 +53,7 @@
     
     getStudents();
     
+    /// Load student data.
     function getStudents() {
       Faculty.getStudents()
         .success(function(data) {
@@ -59,6 +64,37 @@
           $scope.status = error;
         });
     }
+    
+  }]);
+  
+  
+  app.controller("EnrollController", ["$scope", function($scope) {
+    
+    $scope.races = [
+      "Fairy",
+      "Gnome",
+      "Troll",
+      "Human",
+      "Dwarf",
+      "Goblin"
+    ];
+    
+    $scope.genders = ["Male", "Female"];
+    
+    $scope.houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+    
+    $scope.newStudent = {
+      "name": {
+        "first": "",
+        "last": ""
+      },
+      "gender": "",
+      "race": "",
+      "school": {
+        "house": "",
+        "year": ""
+      } 
+    };
     
   }]);
   

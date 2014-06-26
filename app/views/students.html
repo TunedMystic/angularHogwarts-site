@@ -46,8 +46,8 @@
 
   <div>
     <!-- Filter the students before displaying them -->
-    <ul ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName">
-      <li>
+    <ul>
+      <li ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName">
         <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }}</p>
       </li>
     </ul>
