@@ -1,7 +1,7 @@
 
 
 (function () {
-  var app = angular.module("hogwarts", ["ngRoute"]);
+  var app = angular.module("hogwarts", ["ngRoute", "ngAnimate"]);
   
   app.config(function($routeProvider) {
     $routeProvider
