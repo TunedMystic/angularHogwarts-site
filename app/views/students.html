@@ -50,12 +50,13 @@
   <div>
     <!-- Filter the students before displaying them -->
     <ul ng-hide="!students.length">
-      <li ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName" ng-click="makeCurrentStudent($index)">
+      <li ng-repeat="s in filteredStudents = (students | studentHouseFilter:searchHouse | studentNameFilter:searchName)" ng-click="makeCurrentStudent($index)">
         <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }} : {{ $index }} <button ng-show="deleteButton" ng-click="removeStudent($index)">&nbsp;&nbsp;X&nbsp;&nbsp;</button></p>
       </li>
     </ul>
-    <h2 ng-show="!students.length">No Students here</h2>
-    <h3>{{ students.length }}</h3>
+    <h2 ng-show="!students.length">No Students are recorded</h2>
+    <h2 ng-show="!filteredStudents.length && students.length">No results :(</h2>
+    <h3>{{ filteredStudents.length }}</h3>
   </div>
   
   <student student-data="{{ currentStudent }}"></student>
