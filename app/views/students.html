@@ -1,15 +1,14 @@
 <div> <!-- Main panel -->
   
   <div>
-  
     <p>
       <label>First name:</label>
-      <input type="text" ng-model="searchName.first">
+      <input type="text" ng-model="searchName.first" debounce="{{ _deb }}">
     </p>
     
     <p>
       <label>Last name:</label>
-      <input type="text" ng-model="searchName.last">
+      <input type="text" ng-model="searchName.last" debounce="{{ _deb }}">
     </p>
     
     <p>
@@ -40,16 +39,26 @@
       {{ searchHouse }}
     </p>
     
-    <p class="well">{{ status }}</p>
+    <p class="well">
+      <a href="#/enroll">Enroll Now!</a>
+      <button ng-click="toggleDelete()">Delete Student</button>
+    </p>
+    <button ng-click="testUpdate()">Test Update</button>
   </div>
 
 
   <div>
     <!-- Filter the students before displaying them -->
-    <ul>
-      <li ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName">
-        <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }}</p>
+    <ul ng-hide="!students.length">
+      <li ng-repeat="s in students | studentHouseFilter:searchHouse | studentNameFilter:searchName" ng-click="makeCurrentStudent($index)">
+        <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }} : {{ $index }} <button ng-show="deleteButton" ng-click="removeStudent($index)">&nbsp;&nbsp;X&nbsp;&nbsp;</button></p>
       </li>
     </ul>
+    <h2 ng-show="!students.length">No Students here</h2>
+    <h3>{{ students.length }}</h3>
   </div>
+  
+  <student student-data="{{ currentStudent }}"></student>
+  
+  
 </div> <!-- /Main panel -->

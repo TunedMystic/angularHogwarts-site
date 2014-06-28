@@ -1,26 +1,27 @@
 <div>
+  <p class="well"><a href="#/">View Students</a></p>
+  
   <div>
-    <form action="">
+    <form ng-submit="newStudentSubmit()">
       <!-- Name -->
       <p>
         <label>Name:</label>
         <input type="text" placeholder="First" ng-model="newStudent.name.first" required>
-        <input type="text" placeholder="Lase" ng-model="newStudent.name.last"required>
+        <input type="text" placeholder="Last" ng-model="newStudent.name.last"required>
       </p>
       
       <!-- Race -->
       <p>
         <label>Race:</label>
-        <select name="races" required>
-          <option value=""></option>
-          <option ng-repeat="r in races" value="{{ r }}" ng-model="newStudent.race">{{ r }}</option>
+        <select name="races" ng-model="newStudent.race" ng-options="xr for xr in enrollForm.races" required>
+          <option value="">...</option>
         </select>
       </p>
       
       <!-- Gender -->
       <p>
         <label>Gender: </label>
-        <div ng-repeat="g in genders">
+        <div ng-repeat="g in enrollForm.genders">
           <label>{{ g }}</label>
           <input name="gender" type="radio" value="{{ g }}" ng-model="newStudent.gender" required>
         </div> 
@@ -29,9 +30,8 @@
       <!-- House -->
       <p>
         <label>House: </label>
-        <select name="houses" required>
-          <option value=""></option>
-          <option ng-repeat="h in houses" value="{{ h }}" ng-model="newStudent.school.house">{{ h }}</option>
+        <select name="houses" ng-model="newStudent.school.house" ng-options="hx for hx in enrollForm.houses" required>
+          <option value="">...</option>
         </select>
       </p>
       
@@ -52,5 +52,11 @@
       <h2>{{ newStudent }}</h2>
       
     </form>
+  </div>
+  
+  <div>
+    <p ng-repeat="s in people">
+      {{ s.name.first }} {{ s.name.last }}
+    </p>
   </div>
 </div>
