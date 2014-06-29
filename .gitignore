@@ -28,3 +28,4 @@ node_modules
 bower/components
 app/bower_components
 app/temp
+app/misc

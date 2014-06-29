@@ -1,0 +1,43 @@
+
+@import 'site-header.scss';
+@import 'angular-view.scss';
+@import 'directive-student.scss';
+
+#view-container {
+  position: relative;
+}
+
+.row-mod {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+// Override the default 'container-fluid' class
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+  max-width: 950px;
+  min-width: 950px;
+}
+.container-fluid:before {
+  
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  li {
+    // display: inline-block;
+  }
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.inline {
+  display: inline !important;
+}

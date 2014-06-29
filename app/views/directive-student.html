@@ -1,12 +1,46 @@
-<div>
+<div class="student-directive">
 
-  <div ng-hide="emptyData">
+  <!-- <div ng-hide="emptyData">
     <p>** {{ studentDataModel }} **</p>
     <button ng-click="clearData()">..x..</button>
-  </div>
+  </div> -->
   
   <div ng-show="emptyData">
     <p>-- Empty Student --</p>
   </div>
+  
+  <div ng-hide="emptyData">
+    <h2>{{ studentDataModel.name.first }} {{ studentDataModel.name.last }} <span class="simpleX" ng-click="clearData()">&times;</span></h2>
+    
+    <ul class="list-inline student-directive-display">
+      <li>
+        <table>
+          <tr>
+            <td>Race</td>
+            <td>Gender</td>
+          </tr>
+          <tr>
+            <td>{{ studentDataModel.race }}</td>
+            <td>{{ studentDataModel.gender }}</td>
+          </tr>
+          <tr>
+            <td>House</td>
+            <td>Year</td>
+          </tr>
+          <tr>
+            <td>{{ studentDataModel.school.house }}</td>
+            <td>{{ studentDataModel.school.year }}</td>
+          </tr>
+        </table>
+      </li>
+      
+      <li>
+        <img src="http://placehold.it/100x100" alt="studentPicture">
+      </li>
+    </ul>
+  </div>
+    
+  
+      
   
 </div>

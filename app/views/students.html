@@ -1,65 +1,75 @@
-<div> <!-- Main panel -->
+<div class="container-fluid angular-view students"> <!-- Main panel -->
   
-  <div>
-    <p>
-      <label>First name:</label>
-      <input type="text" ng-model="searchName.first" debounce="{{ _deb }}">
-    </p>
+  <div class="row row-mod">
+    <h2 class="view-title">Search Current Students</h2>
     
-    <p>
-      <label>Last name:</label>
-      <input type="text" ng-model="searchName.last" debounce="{{ _deb }}">
-    </p>
-    
-    <p>
-      <ul>
-      
-        <li>
-          <label>Gryffindor</label>
-          <input type="checkbox" ng-model="searchHouse.Gryffindor">
+    <div class="col-md-4 pull-left text-center" style="background-color: rgb(201, 201, 201);">
+      <!-- Filter the students before displaying them -->
+      <ul ng-hide="!students.length">
+        <li ng-repeat="s in filteredStudents = (students | studentHouseFilter:searchHouse | studentNameFilter:searchName)">
+          <p class="{{ s.school.house }}" ng-click="makeCurrentStudent($index)">{{ $index }} {{ s.name.first }} {{s.name.last }}<button ng-show="deleteButton" ng-click="removeStudent($index)">&nbsp;&nbsp;X&nbsp;&nbsp;</button></p>
         </li>
-        
-        <li>
-          <label>Hufflepuff</label>
-          <input type="checkbox" ng-model="searchHouse.Hufflepuff">
-        </li>
-        
-        <li>
-          <label>Ravenclaw</label>
-          <input type="checkbox" ng-model="searchHouse.Ravenclaw">
-        </li>
-        
-        <li>
-          <label>Slytherin</label>
-          <input type="checkbox" ng-model="searchHouse.Slytherin">
-        </li>
-        
       </ul>
-      {{ searchName }}
-      {{ searchHouse }}
-    </p>
+      <h2 ng-show="!students.length">No Students are recorded</h2>
+      <h2 ng-show="!filteredStudents.length && students.length">No results :(</h2>
+      <h3 ng-show="filteredStudents.length && students.length">{{ filteredStudents.length }} Students</h3>
+    </div>
     
-    <p class="well">
-      <a href="#/enroll">Enroll Now!</a>
-      <button ng-click="toggleDelete()">Delete Student</button>
-    </p>
-    <button ng-click="testUpdate()">Test Update</button>
-  </div>
-
-
-  <div>
-    <!-- Filter the students before displaying them -->
-    <ul ng-hide="!students.length">
-      <li ng-repeat="s in filteredStudents = (students | studentHouseFilter:searchHouse | studentNameFilter:searchName)" ng-click="makeCurrentStudent($index)">
-        <p class="{{ s.school.house }}"> {{ s.name.first }} {{s.name.last }} : {{ $index }} <button ng-show="deleteButton" ng-click="removeStudent($index)">&nbsp;&nbsp;X&nbsp;&nbsp;</button></p>
-      </li>
-    </ul>
-    <h2 ng-show="!students.length">No Students are recorded</h2>
-    <h2 ng-show="!filteredStudents.length && students.length">No results :(</h2>
-    <h3>{{ filteredStudents.length }}</h3>
+    
+    <div class="col-md-8">
+    
+      <div>
+        <student student-data="{{ currentStudent }}"></student>
+      </div>
+      
+      <div class="filter-panel">
+        <h3>Filter students:</h3>
+        
+        <div>
+          <label>Name</label>
+          <input type="text" placeholder="First" ng-model="searchName.first" debounce="{{ _deb }}">
+          <input type="text" placeholder="Last" ng-model="searchName.last" debounce="{{ _deb }}">
+        </div>
+        
+        <div>
+          <label class="inline">House</label>
+          <ul class="list-inline inline">
+            <li>
+              <label for="searchGryffindor">Gryffindor</label>
+              <input type="checkbox" id="searchGryffindor" ng-model="searchHouse.Gryffindor">
+            </li>
+            
+            <li>
+              <label for="searchHufflepuff">Hufflepuff</label>
+              <input type="checkbox" id="searchHufflepuff" ng-model="searchHouse.Hufflepuff">
+            </li>
+            
+            <li>
+              <label for="searchRavenclaw">Ravenclaw</label>
+              <input type="checkbox" id="searchRavenclaw"ng-model="searchHouse.Ravenclaw">
+            </li>
+            
+            <li>
+              <label for="searchSlytherin">Slytherin</label>
+              <input type="checkbox" id="searchSlytherin" ng-model="searchHouse.Slytherin">
+            </li>
+          </ul>
+        </div>
+        
+        <ul class="list-inline">
+          <li><a href="#/enroll" class="btn btn-default">Add Student</a></li>
+          <li><button class="btn btn-danger" ng-click="toggleDelete()">Delete Student</button></li>
+        </ul>
+        
+      </div> <!-- //.filter-panel -->
+      
+    </div>
+    
+    
   </div>
   
-  <student student-data="{{ currentStudent }}"></student>
+  
+  
   
   
 </div> <!-- /Main panel -->

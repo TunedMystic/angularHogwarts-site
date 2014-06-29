@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -22,7 +23,30 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view class="fade"></div>
+    
+    <!-- Site Header -->
+    <div id="top-header"></div>
+    <div class="container-fluid">
+      <header id="site-header" class="text-center">
+        <h2><span class="left">Hogwarts</span><span class="right">Registry</span></h2>
+        <img src="../misc/HogwartsCrest.png" alt="">
+        <div class="header-divider"></div>
+        <div class="banner left"></div>
+        <div class="banner right"></div>
+      </header>
+    </div>
+      
+    <!-- AngularJS Views -->
+    <div id="view-container" class="container-fluid">
+      <div ng-view class="fade"></div>
+    </div>
+    
+    <!-- Site Footer -->
+    <div class="container-fluid">
+      <footer id="site-footer" class="text-center">
+        
+      </footer>
+    </div>
     
       
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>

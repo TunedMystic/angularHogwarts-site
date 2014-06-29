@@ -1,0 +1,65 @@
+
+
+$wordRotation: 16deg;
+$wordTranslateX: 27px;
+$wordTranslateY: 7px;
+
+#top-header {
+  position: absolute;
+  top: 0;
+  height: 22px;
+  width: 100%;
+  z-index: 9;
+  background-color: #000000;
+}
+
+#site-header {
+  position: relative;
+  
+  h2 {
+    padding-top: 15px;
+    
+    span {
+      display: inline-block;
+    }
+    
+    span.left {
+      -webkit-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+         -moz-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+           -o-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+              transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+    }
+    
+    span.right {
+      -webkit-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+         -moz-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+           -o-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+              transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+    }
+  }
+  
+  .header-divider {
+    width: 100%;
+    height: 30px;
+    background-color: #3C221B;
+  }
+  
+}
+
+.banner {
+  position:absolute;
+  z-index: 4;
+  top: 0;
+  background-image: url("../misc/banner.png");
+  width: 200px;
+  height: 400px;
+}
+
+.banner.left {
+  left: 0;
+  left: -15px;
+}
+.banner.right {
+  right: 0;
+  right: -15px;
+}

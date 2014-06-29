@@ -1,0 +1,23 @@
+
+.student-directive-display {
+  li {
+    table {
+      // align with the height of the student-picture.
+      height: 100px;
+      
+      tr, td {
+        padding: 2px 10px;
+      }
+    }
+    
+    img {
+      vertical-align: inherit !important;
+    }
+  }
+}
+
+.student-directive {
+  .simpleX {
+    color: #757575;
+  }
+}
