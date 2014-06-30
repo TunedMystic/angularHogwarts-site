@@ -1,24 +1,124 @@
 
 // TEMPORARY!!
 .angular-view {
-  background-color: #AAAAAA;
+  //background-color: #AAAAAA;
 }
 
 .angular-view {
   padding-top: 15px;
   
   h2.view-title {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .row-mod {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 40px;
   }
 }
 
 .angular-view.students {
-  .filter-panel {
-    
+  .no-res-h2 {
+    margin-bottom: 30px;
   }
+  
+  .filter-panel {    
+    //border: 1px solid black;
+    .filter-title {
+      margin-bottom: 12px;
+      margin-top: 10px;
+    }
+    .add-delete-list {
+      margin-top: 30px;
+      margin-bottom: 18px;
+    }
+    
+    ul li label {
+      margin-right: 10px;
+      font-weight: normal;
+    }
+  }
+  
+  
+  // Parent of the ul.
+  .students-list {
+    @include round-corners(3px);
+    border: 1px solid #725943;
+    background-color: #D1B58A;
+    background-image: url("../misc/noise.png");
+    overflow: auto; // enable scrolling.
+    max-height: 428px;
+  }
+  
+  .students-list-inner {
+  }
+  
+  // The ul.
+  .filtered-student-list {
+    padding-top: 10px;
+    
+    padding-left: 0px;
+    text-align: left;
+    
+    .filtered-item {
+      @include round-corners(3px);
+      border: 1px solid #755032;
+      background-color: #D8BB8F;
+      padding: 2px 7px;
+      margin: 8px 0px;
+      
+      p {
+        display: inline;
+        cursor: pointer;
+      }
+      span {
+        cursor: pointer;
+        display: inline;
+        float: right;
+        font-size: 23px;
+        margin-top: -5px;
+      }
+    }
+  } // .filtered-students-list
 }
 
 .angular-view.enroll {
+  .field-name-offset {
+    margin-left: 5px;
+  }
   
+  .field-race-offset {
+    margin-left: 11px;
+  }
+  
+  .field-house-offset {
+    
+  }
+  
+  .field-gender-offset {
+    margin-left: 89px;
+  }
+  
+  .field-year-offset {
+    margin-left: 60px;
+  }
+  
+  .enroll-form-padding {
+    padding-left: 30px;
+  }
+  
+  .form-button-margin {
+    margin-right: 64px;
+  }
+  
+  .form-back-button-margin {
+    margin-right: 20px;
+  }
+  
+  .text-normal {
+    font-weight: normal;
+  }
 }

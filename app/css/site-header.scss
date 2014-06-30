@@ -2,7 +2,7 @@
 
 $wordRotation: 16deg;
 $wordTranslateX: 27px;
-$wordTranslateY: 7px;
+$wordTranslateY: 17px;
 
 #top-header {
   position: absolute;
@@ -15,9 +15,15 @@ $wordTranslateY: 7px;
 
 #site-header {
   position: relative;
+  background-color: #5E3E25;
+  background-image: url("../misc/pattern_002.png");
+  background-image: url("../misc/pattern_005.png");
   
   h2 {
-    padding-top: 15px;
+    @include site-header-font();
+    padding-top: 5px;
+    text-shadow: 2px 2px 3px rgba(7, 7, 7, 0.77);
+    color: #CF741F;
     
     span {
       display: inline-block;

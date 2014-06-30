@@ -95,7 +95,7 @@
   }]);
 
 
-  app.controller("EnrollController", ["$scope", "StudentFactory", "EnrollConfig", function($scope, StudentFactory, EnrollConfig) {
+  app.controller("EnrollController", ["$scope", "$location", "StudentFactory", "EnrollConfig", function($scope, $location, StudentFactory, EnrollConfig) {
     $scope.enrollForm = {};
     $scope._newStudentFields = {};
     
@@ -133,12 +133,19 @@
     
     // Add a new student to the 'StudentFactory' service.
     $scope.newStudentSubmit = function() {
-      alert(JSON.stringify($scope.newStudent, null, 2));
+      // /alert(JSON.stringify($scope.newStudent, null, 2));
       StudentFactory.addStudent($scope.newStudent).then(function(data) {
         console.log("enroll updated");
         console.log(data);
+        
+        // Alert the change, then go to the root.
+        alert("Student '" + $scope.newStudent.name.first + "' has been enrolled!");
+        
         // Clear the form fields
         $scope.newStudent = newStudentModel();
+        
+        $location.path("/");
+        //$scope.$apply(function() { $location.path("/"); });
       });
     };
   }]);

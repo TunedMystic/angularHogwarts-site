@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -28,8 +28,8 @@
     <div id="top-header"></div>
     <div class="container-fluid">
       <header id="site-header" class="text-center">
-        <h2><span class="left">Hogwarts</span><span class="right">Registry</span></h2>
-        <img src="../misc/HogwartsCrest.png" alt="">
+        <a href="#/"><h2><span class="left">Hogwarts</span><span class="right">Registry</span></h2></a>
+        <a href="#/"><img src="../misc/HogwartsCrest.png" alt=""></a>
         <div class="header-divider"></div>
         <div class="banner left"></div>
         <div class="banner right"></div>
@@ -43,13 +43,53 @@
     
     <!-- Site Footer -->
     <div class="container-fluid">
+      <div id="footer-divider-quote">
+          <h2><span class="big">Sorting Hats</span><span class="smaller">are for babies!</span></h2>
+      </div>
+      
       <footer id="site-footer" class="text-center">
+      
+        <div class="rant">
+          <p>Enrolling Hogwarts students is what this <span class="angular">AngularJS</span> app is all about.</p>
+          <br>
+          <p class="smaller">Let's be honest here, times are changing, and 
+            and registration time for Hogwarts is becoming a bit of a hassle.
+            I mean, it's gone totally bollocks!
+            Our owls are getting a wee bit old, and forget about 
+            preparing all those acceptance letters!</p>
+          <br>
+          <p class="yellow">Scabbers always nibbles up my good paper, and those potty 
+            chocolate frogs are always making a mess of my office!</p>
+          <br>
+          <p class="smaller">In light of this, I began working on a student registration redesign. 
+            One that needn't be funded by Gringotts, but by my own perseverance
+            ...and Bertie Bott's jellybeans.
+            Needless to say, some of the <span class="angular">Angular</span> features displayed 
+            are <span class="angular">filtering</span>, <span class="angular">services</span>, <span class="angular">routing</span>, and <span class="angular">directives</span>.
+            The best part is that enrolling students is quick and easy, 
+            like finding all of Voldemort's horcruxes in an Easter egg hunt (Jk!)</p>
+          <br>
+          <p>And now to all of my witch, wizard, Muggle, and Death Eater friends 
+            out there: 
+            I entrust in you, the task of making the world a more efficient place 
+            through the use of these smashing <span class="web">web technologies</span>, and I'll see you 
+            on the other side of the Forbidden Forest.</p>
+        </div>
+        
+        <br>
+        <div class="credits">
+          <p>Hand-coded by me   :D</p>
+          <p>&copy; 2014 <a href="http://smallcode.me" target="_blank">Sandeep Jadoonanan</a></p>
+        </div>
+        <hr class="credits-hr">
         
       </footer>
     </div>
     
+    
+    
       
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>

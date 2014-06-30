@@ -1,0 +1,70 @@
+
+#site-footer {
+  background-color: #0B0B22;
+  color: #A2AAB8;
+  
+  .credits {
+    color: #645A86;
+    a {
+      color: #698FD1;
+      text-decoration: none;
+    }
+    a:hover {
+      
+    }
+  }
+  
+  .credits-hr {
+    /* Single-direction drop shadow */
+    height: 12px;
+    margin-bottom: 0px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+  }
+}
+
+#footer-divider-quote {
+  background-color: #0C1020;
+  background-color: #171924;
+  background-image: url("../misc/pattern_007.png");
+  h2{
+    text-align: center;
+    margin: 0px;
+    padding-top: 5px;
+    color: #B9AF9E;
+    
+    span.big {
+      font-family: Potter;
+      font-size: 120px;
+      color: #E9861B;
+    }
+    
+    span.smaller {
+      vertical-align: top;
+      line-height: 119px;
+      margin-left: 26px;
+    }
+  }
+}
+
+.rant {
+  padding: 15px 40px;
+  padding-top: 30px;
+  font-size: 26px;
+  
+  .smaller {
+    font-size: 18px;
+  }
+  
+  .angular {
+    color: rgb(245, 26, 104);
+  }
+  
+  .web {
+    color: #8AD33B;
+  }
+  
+  .yellow {
+    color: #E0CA57;
+  }
+}

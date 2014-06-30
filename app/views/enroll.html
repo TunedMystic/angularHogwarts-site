@@ -1,65 +1,64 @@
 <div class="angular-view enroll">
   
-  <h2 class="view-title">Enroll A Student</h2>
+  <h2 class="view-title king">Enroll A Student</h2>
   
-  <p class="well"><a href="#/">View Students</a></p>
+  <!-- <p class="well"><a href="#/">View Students</a></p> -->
   
-  <div>
-    <form ng-submit="newStudentSubmit()">
-      <!-- Name -->
-      <p>
-        <label>Name:</label>
-        <input type="text" placeholder="First" ng-model="newStudent.name.first" required>
-        <input type="text" placeholder="Last" ng-model="newStudent.name.last"required>
-      </p>
-      
-      <!-- Race -->
-      <p>
-        <label>Race:</label>
-        <select name="races" ng-model="newStudent.race" ng-options="xr for xr in enrollForm.races" required>
-          <option value="">...</option>
-        </select>
-      </p>
-      
-      <!-- Gender -->
-      <p>
-        <label>Gender: </label>
-        <div ng-repeat="g in enrollForm.genders">
-          <label>{{ g }}</label>
-          <input name="gender" type="radio" value="{{ g }}" ng-model="newStudent.gender" required>
-        </div> 
-      </p>
-      
-      <!-- House -->
-      <p>
-        <label>House: </label>
-        <select name="houses" ng-model="newStudent.school.house" ng-options="hx for hx in enrollForm.houses" required>
-          <option value="">...</option>
-        </select>
-      </p>
-      
-      <!-- Year -->
-      <p>
-        <label>Year: </label>
-        <input type="number" placeholder="1" min="1" max="7" ng-model="newStudent.school.year" required>
-      </p>
-      
-      
-      <!-- This is the correct way to use the <select> tag in AngularJS. -->
-      <!-- <p>
-        <select ng-model="newStudent.school.house" ng-options="x for x in houses"></select>
-      </p> -->
-      
-      <button type="submit">Sumbit</button>
-      
-      <h2>{{ newStudent }}</h2>
-      
-    </form>
-  </div>
+  <div class="row row-mod">
+    <div class="col-md-2"></div>
+    
+    <div class="col-md-8 enroll-form-padding">
+      <form ng-submit="newStudentSubmit()">
+        <!-- Name -->
+        <p>
+          <label>Name:</label>
+          <input class="field-name-offset" type="text" placeholder="First" maxlength="19" ng-model="newStudent.name.first" required>
+          <input type="text" placeholder="Last" maxlength="19" ng-model="newStudent.name.last"required>
+        </p>
+        <br>
+        <!-- Race -->
+        <p class="inline">
+          <label>Race:</label>
+          <select class="field-race-offset" name="races" ng-model="newStudent.race" ng-options="xr for xr in enrollForm.races" required>
+            <option value="">...</option>
+          </select>
+        </p>
+        
+        <!-- Gender -->
+        <p class="inline">
+          <label class="field-gender-offset">Gender: </label>
+          <span ng-repeat="g in enrollForm.genders">
+            <label class="text-normal">{{ g }}</label>
+            <input name="gender" type="radio" value="{{ g }}" ng-model="newStudent.gender" required>
+          </span>
+        </p>
+        
+        <br>
+        <br>
+        <!-- House -->
+        <p class="inline">
+          <label>House: </label>
+          <select name="houses" ng-model="newStudent.school.house" ng-options="hx for hx in enrollForm.houses" required>
+            <option value="">...</option>
+          </select>
+        </p>
+        
+        <!-- Year -->
+        <p class="inline">
+          <label class="field-year-offset">Year: </label>
+          <input type="number" placeholder="1" min="1" max="7" ng-model="newStudent.school.year" required>
+        </p>
+        
+        <br>
+        <br>
+        <button class="btn btn-lg btn-primary pull-right form-button-margin" type="submit">Submit</button>
+        <a href="#/" class="btn btn-lg btn-success pull-right form-back-button-margin" type="button">View All Students</a>
+        
+      </form>
+    </div> <!-- /.col-md-10 -->
+    
+    <div class="col-md-2"></div>
+    
+  </div> <!-- /.row -->
   
-  <div>
-    <p ng-repeat="s in people">
-      {{ s.name.first }} {{ s.name.last }}
-    </p>
-  </div>
-</div>
+</div> <!-- /.angular-view enroll -->
