@@ -11,7 +11,7 @@
       scope: {
         studentDataString: "@studentData"
       },
-      templateUrl: "../views/directive-student.html",
+      templateUrl: "views/directive-student.html",
       controller: ["$rootScope", "$scope", function($rootScope, $scope) {
         $scope.studentDataString;
         $scope.studentDataModel;
