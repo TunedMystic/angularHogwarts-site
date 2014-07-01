@@ -3,7 +3,9 @@
 (function () {
   var app = angular.module("hogwarts", ["ngRoute", "ngAnimate"]);
   
-  app.config(function($routeProvider, $locationProvider) {
+  app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    
     $routeProvider
     .when("/", {
       templateUrl: "views/students.html",
@@ -16,8 +18,6 @@
     .otherwise({
       templateUrl: "views/app404.html"
     });
-  });
+  }]);
   
-  $locationProvider.html5Mode(true);
-
 })();
