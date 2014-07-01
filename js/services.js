@@ -53,8 +53,8 @@
 
   // A Factory to give access to enrollment config files.
   app.factory("EnrollConfig", ["$http", function($http) {
-    var configUrl = "/temp/enrollConfig.json";
-    var newStudentUrl = "/temp/newStudent.json";
+    var configUrl = "js/enrollConfig.json";
+    var newStudentUrl = "js/newStudent.json";
     
     var getConfigObject = function() {
       return $http.get(configUrl);

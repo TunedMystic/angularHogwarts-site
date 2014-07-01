@@ -1,0 +1,24 @@
+{
+  "enrollOptions": {
+    "races": [
+      "Fairy",
+      "Gnome",
+      "Troll",
+      "Human",
+      "Dwarf",
+      "Goblin"
+    ],
+    
+    "genders": [
+      "Male",
+      "Female"
+    ],
+    
+    "houses": [
+      "Gryffindor",
+      "Hufflepuff",
+      "Ravenclaw",
+      "Slytherin"
+    ]
+  }
+}
