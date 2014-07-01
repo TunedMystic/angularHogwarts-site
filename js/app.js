@@ -8,11 +8,11 @@
     
     $routeProvider
     .when("/", {
-      templateUrl: "angularHogwarts-site/views/students.html",
+      templateUrl: "views/students.html",
       controller: "StudentsController"
     })
     .when("/enroll", {
-      templateUrl: "angularHogwarts-site/views/enroll.html",
+      templateUrl: "views/enroll.html",
       controller: "EnrollController"
     })
     .otherwise({
