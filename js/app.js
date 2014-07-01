@@ -4,6 +4,7 @@
   var app = angular.module("hogwarts", ["ngRoute", "ngAnimate"]);
   
   app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    // This is for hash-less urls.
     //$locationProvider.html5Mode(true);
     //$locationProvider.hashPrefix("#");
     
