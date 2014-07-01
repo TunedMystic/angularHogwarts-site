@@ -1,0 +1,14 @@
+{
+  "newStudentModel": {
+    "name": {
+      "first": "",
+      "last": ""
+    },
+    "gender": "",
+    "race": "",
+    "school": {
+      "house": "",
+      "year": ""
+    } 
+  }
+}
