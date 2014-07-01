@@ -1,0 +1,70 @@
+
+
+$wordRotation: 16deg;
+$wordTranslateX: 27px;
+$wordTranslateY: 17px;
+
+#top-header {
+  position: absolute;
+  top: 0;
+  height: 22px;
+  width: 100%;
+  z-index: 9;
+  background-color: #2C0F0F;
+}
+
+#site-header {
+  position: relative;
+  background-color: #5E3E25;
+  background-image: url("../img/header-pattern.png");
+  
+  h2 {
+    @include site-header-font();
+    padding-top: 5px;
+    text-shadow: 2px 2px 3px rgba(7, 7, 7, 0.77);
+    color: #CF741F;
+    
+    span {
+      display: inline-block;
+    }
+    
+    span.left {
+      -webkit-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+         -moz-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+           -o-transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+              transform: rotate(-$wordRotation) translate(-$wordTranslateX, $wordTranslateY);
+    }
+    
+    span.right {
+      -webkit-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+         -moz-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+           -o-transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+              transform: rotate($wordRotation) translate($wordTranslateX, $wordTranslateY);
+    }
+  }
+  
+  .header-divider {
+    width: 100%;
+    height: 30px;
+    background-color: #1B0F0C;
+  }
+  
+}
+
+.banner {
+  position:absolute;
+  z-index: 4;
+  top: 0;
+  background-image: url("../img/hogwarts-banner.png");
+  width: 200px;
+  height: 400px;
+}
+
+.banner.left {
+  left: 0;
+  left: -15px;
+}
+.banner.right {
+  right: 0;
+  right: -15px;
+}

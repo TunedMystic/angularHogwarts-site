@@ -1,0 +1,53 @@
+
+@import 'fonts.scss';
+@import 'misc.scss';
+@import 'site-header.scss';
+@import 'site-footer.scss';
+@import 'angular-view.scss';
+@import 'directive-student.scss';
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+  background-color: #e9e9e9;
+  background-image: url("../img/site-background.jpg");
+  @include main-font();
+}
+
+#view-container {
+  position: relative;
+  height: 620px;
+  background-image: url("../img/paper-pattern.png");
+}
+
+// Override the default 'container-fluid' class
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+  max-width: 950px;
+  min-width: 950px;
+}
+.container-fluid:before {
+  
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  li {
+    // display: inline-block;
+  }
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.inline {
+  display: inline !important;
+}

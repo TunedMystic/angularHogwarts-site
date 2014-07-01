@@ -1,0 +1,13 @@
+{
+  "name": "defaultApp",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.18",
+    "bootstrap": "~3.1.1",
+    "underscore": "~1.6.0",
+    "angular-animate": "~1.2.18"
+  }
+}

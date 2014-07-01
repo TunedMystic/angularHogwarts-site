@@ -1,0 +1,79 @@
+<div class="container-fluid angular-view students">
+  
+  <div class="row row-mod">
+    <h2 class="view-title king">Search Current Students</h2>
+    
+    <div class="col-md-4 pull-left text-center students-list">
+    
+      <h3 ng-show="filteredStudents.length && students.length">{{ filteredStudents.length }} Students</h3>
+      <div class="students-list-inner">
+        <!-- Filter the students before displaying them -->
+        <ul ng-hide="!students.length" class="filtered-student-list">
+          <li class="filtered-item" ng-repeat="s in filteredStudents = (students | studentHouseFilter:searchHouse | studentNameFilter:searchName)">
+            <p class="{{ s.school.house }}" ng-click="makeCurrentStudent($index)">
+              {{ s.name.first }} {{s.name.last }}
+            </p>
+            <span ng-show="deleteButton" ng-click="removeStudent($index)">&times;</span>
+          </li>
+        </ul>
+        <h2 ng-show="!students.length">No Students are recorded</h2>
+        <h2 ng-show="!filteredStudents.length && students.length" class="no-res-h2">No results :(</h2>
+        <!-- <h3 ng-show="filteredStudents.length && students.length">{{ filteredStudents.length }} Students</h3> -->
+      </div>
+    </div>
+    
+    
+    <div class="col-md-8 text-center">
+    
+      <div>
+        <student student-data="{{ currentStudent }}"></student>
+      </div>
+      
+      <div class="filter-panel">
+        <h3 class="filter-title">Filter students:</h3>
+        
+        <div>
+          <label class="text-left">Name</label>
+          <p>
+            <input type="text" placeholder="First" maxlength="19" ng-model="searchName.first" debounce="{{ _deb }}">
+            <input type="text" placeholder="Last" maxlength="19" ng-model="searchName.last" debounce="{{ _deb }}">
+          </p>
+        </div>
+        
+        <br>
+        <div>
+          <label class="text-left">House</label>
+          <ul class="list-inline">
+            <li>
+              <label for="searchGryffindor">Gryffindor</label>
+              <input type="checkbox" id="searchGryffindor" ng-model="searchHouse.Gryffindor">
+            </li>
+            
+            <li>
+              <label for="searchHufflepuff">Hufflepuff</label>
+              <input type="checkbox" id="searchHufflepuff" ng-model="searchHouse.Hufflepuff">
+            </li>
+            
+            <li>
+              <label for="searchRavenclaw">Ravenclaw</label>
+              <input type="checkbox" id="searchRavenclaw"ng-model="searchHouse.Ravenclaw">
+            </li>
+            
+            <li>
+              <label for="searchSlytherin">Slytherin</label>
+              <input type="checkbox" id="searchSlytherin" ng-model="searchHouse.Slytherin">
+            </li>
+          </ul>
+        </div>
+        
+        <ul class="list-inline add-delete-list">
+          <li><a href="#/enroll" class="btn btn-default">Add Student</a></li>
+          <li><button class="btn" ng-class="{'true': 'btn-warning', 'false': 'btn-danger'}[deleteButton]" ng-click="toggleDelete()">Delete Student</button></li>
+        </ul>
+        
+      </div> <!-- //.filter-panel -->
+    </div>  
+    
+  </div> <!-- ./row -->
+  
+</div> <!-- /.angular-view students -->

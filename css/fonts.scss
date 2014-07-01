@@ -1,0 +1,41 @@
+
+
+@font-face {
+  font-family: 'Dutch';
+  src: url('../font/Deutsch.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'King';
+  src: url('../font/Kingthings_Exeter.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+
+@font-face {
+  font-family: 'Andika';
+  src: url('../font/Andika.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Potter';
+  src: url('../font/HarryPotter.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@mixin site-header-font() {
+  font-family: Dutch;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+@mixin main-font() {
+  font-family: Andika;
+  font-size: 17px;
+}
+
+.king {
+  font-family: king;
+}
+
+.small-font {
+  font-size: 10px;
+}

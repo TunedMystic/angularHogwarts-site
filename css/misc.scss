@@ -1,0 +1,65 @@
+
+
+// Round all corners by amount
+@mixin round-corners($amount) {
+  -webkit-border-radius: $amount;
+     -moz-border-radius: $amount;
+          border-radius: $amount;
+}
+
+$checkboxSize: 1.7;
+$checkboxPadding: 10px;
+
+input[type="checkbox"] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale($checkboxSize); /* IE */
+  -moz-transform: scale($checkboxSize); /* FF */
+  -webkit-transform: scale($checkboxSize); /* Safari and Chrome */
+  -o-transform: scale($checkboxSize); /* Opera */
+  padding: $checkboxPadding;
+}
+
+input[type="radio"] {
+  -ms-transform: scale($checkboxSize); /* IE */
+  -moz-transform: scale($checkboxSize); /* FF */
+  -webkit-transform: scale($checkboxSize); /* Safari and Chrome */
+  -o-transform: scale($checkboxSize); /* Opera */
+  margin-left: $checkboxPadding;
+}
+
+input[type="text"] {
+  background-color: #C5A067;
+  border: 1px solid rgb(168, 128, 106);
+  width: 200px;
+  padding: 2px 0px;
+  padding-left: 15px;
+  outline: 0px;
+}
+select, input[type="number"] {
+  background-color: #C5A067;
+  border: 1px solid rgb(168, 128, 106);
+  outline: 0px;
+}
+input[type="number"] {
+  padding-left: 4px;
+}
+
+@mixin placeholder-color($color) {
+  ::-webkit-input-placeholder { /* WebKit browsers */
+      color:    $color;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color:    $color;
+      opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color:    $color;
+      opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+      color:    $color;
+  }
+}
+
+
+@include placeholder-color(#776150);

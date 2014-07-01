@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="hogwarts"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    
+    <!-- Site Header -->
+    <div id="top-header"></div>
+    <div class="container-fluid">
+      <header id="site-header" class="text-center">
+        <a href="#/"><h2><span class="left">Hogwarts</span><span class="right">Registry</span></h2></a>
+        <a href="#/"><img src="../img/hogwarts-crest.png" width="250" height="235" alt=""></a>
+        <div class="header-divider"></div>
+        <div class="banner left"></div>
+        <div class="banner right"></div>
+      </header>
+    </div>
+      
+    <!-- AngularJS Views -->
+    <div id="view-container" class="container-fluid">
+      <div ng-view class="fade"></div>
+    </div>
+    
+    <!-- Site Footer -->
+    <div class="container-fluid">
+      <div id="footer-divider-quote">
+          <h2><span class="big">Sorting Hats</span><span class="smaller">are for babies!</span></h2>
+      </div>
+      
+      <footer id="site-footer" class="text-center">
+      
+        <div class="rant">
+          <p>Enrolling Hogwarts students is what this <span class="angular">AngularJS</span> app is all about.</p>
+          <br>
+          <p class="smaller narrow">Let's be honest here, times are changing, and 
+            and registration time for Hogwarts is becoming a bit of a hassle.
+            I mean, it's gone totally bollocks!
+            Our owls are getting a wee bit old, and forget about 
+            preparing all those acceptance letters!</p>
+          <br>
+          <p class="well yellow">Scabbers always nibbles up my good paper, and those potty 
+            chocolate frogs are always making a mess of my office!</p>
+            
+          <img class="angular-hp-logos" src="../img/angular.png" alt="AngularJS">
+          
+          <p class="smaller narrow">In light of this, I began working on a student registration redesign. 
+            One that needn't be funded by Gringotts, but by my own perseverance
+            ...and Bertie Bott's jellybeans.
+            Needless to say, some of the <span class="angular">Angular</span> features displayed 
+            are <span class="angular">filtering</span>, <span class="angular">services</span>, <span class="angular">routing</span>, and <span class="angular">directives</span>.
+            The best part is that enrolling students is quick and easy, 
+            like finding all of Voldemort's horcruxes in an Easter egg hunt (Jk!)</p>
+          <br>
+          <p>And now to all of my <span class="magic-person">Witch</span>, <span class="magic-person">Wizard</span>, <span class="magic-person">Muggle</span>, and <span class="magic-person">Death Eater</span> friends 
+            out there: 
+            I entrust in you, the task of making the world a more efficient place 
+            through the use of these smashing <span class="web">web technologies</span>, and I'll see you 
+            on the other side of the Forbidden Forest.</p>
+        </div>
+        
+        <br>
+        <div class="credits">
+          <p>Hand-coded by me   :D</p>
+          <p>&copy; 2014 <a href="http://smallcode.me" target="_blank">Sandeep Jadoonanan</a></p>
+        </div>
+        <hr class="credits-hr">
+        
+      </footer>
+    </div>
+    
+ 
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/_mainStudentList.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+
+</body>
+</html>
