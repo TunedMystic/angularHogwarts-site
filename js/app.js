@@ -6,11 +6,11 @@
   app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-      templateUrl: "../views/students.html",
+      templateUrl: "views/students.html",
       controller: "StudentsController"
     })
     .when("/enroll", {
-      templateUrl: "../views/enroll.html",
+      templateUrl: "views/enroll.html",
       controller: "EnrollController"
     })
     .otherwise({
