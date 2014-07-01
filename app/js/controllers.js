@@ -1,9 +1,9 @@
 
-
 (function() {
   
   var app = angular.module("hogwarts");
   
+  // Controller for viewing and filtering students.
   app.controller("StudentsController", ["$scope", "StudentFactory", function($scope, StudentFactory) {
     $scope._deb = 400;
     $scope.deleteButton = false;
@@ -36,12 +36,10 @@
     
     // When you click on a student, it becomes the 'currentStudent'.
     $scope.makeCurrentStudent = function(i) {
-      if(!_.isEqual($scope.currentStudent, $scope.students[i])) {
-        $scope.currentStudent = $scope.students[i];
-        console.log("current student is now");
-        console.log($scope.currentStudent);
+      if(!_.isEqual($scope.currentStudent, $scope.filteredStudents[i])) {
+        $scope.currentStudent = $scope.filteredStudents[i];
       }
-      else console.log("the same...");
+      //else console.log("the same...");
     }
     
     // Get the list of current students.
@@ -60,41 +58,16 @@
         $scope.currentStudent = {};
         
       StudentFactory.deleteStudent(i).then(function(data) {
-        console.log("Student deleted");
-        console.log(data);
+        //console.log("Student deleted");
       });
     }
     
     getStudents();
     
-    //---------------------------------------------
-    //    Delete this when not needed anymore
-    
-    window.sc = $scope;
-    
-    $scope.testUpdate = function() {
-      var testStudent = {
-        "name": {
-          "first": "Ron",
-          "last": "Bombad Jedi"
-        },
-        "gender": "Male",
-        "race": "Troll",
-        "school": {
-          "house": "Gryffindor",
-          "year": "3"
-        } 
-      };
-      StudentFactory.addStudent(testStudent).then(function(data) {
-        console.log("Updated...");
-        console.log(data);
-      });
-    };
-    
-    //------ /delete this-------------
   }]);
 
 
+  // Controller for enrolling students.
   app.controller("EnrollController", ["$scope", "$location", "StudentFactory", "EnrollConfig", function($scope, $location, StudentFactory, EnrollConfig) {
     $scope.enrollForm = {};
     $scope._newStudentFields = {};
@@ -133,11 +106,7 @@
     
     // Add a new student to the 'StudentFactory' service.
     $scope.newStudentSubmit = function() {
-      // /alert(JSON.stringify($scope.newStudent, null, 2));
-      StudentFactory.addStudent($scope.newStudent).then(function(data) {
-        console.log("enroll updated");
-        console.log(data);
-        
+      StudentFactory.addStudent($scope.newStudent).then(function(data) {       
         // Alert the change, then go to the root.
         alert("Student '" + $scope.newStudent.name.first + "' has been enrolled!");
         
@@ -145,7 +114,6 @@
         $scope.newStudent = newStudentModel();
         
         $location.path("/");
-        //$scope.$apply(function() { $location.path("/"); });
       });
     };
   }]);

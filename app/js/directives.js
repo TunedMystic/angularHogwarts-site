@@ -1,9 +1,9 @@
 
-
 (function() {
   
   var app = angular.module("hogwarts");
   
+  // Directive for viewing the details of a single student.
   app.directive("student", function() {
     return {
       restrict: "E",
@@ -23,10 +23,6 @@
           
           // Determine if the sent-in data is an empty object.
           $scope.emptyData = _.isEqual($scope.studentDataModel, {});
-          console.log("\nscope.emptyData");
-          console.log($scope.emptyData);
-          console.log("\nscope.studentDataModel");
-          console.log($scope.studentDataModel);
         }
         
         // Clear data from this directive.
@@ -35,20 +31,28 @@
           $rootScope.$broadcast("clearCurrentStudent", "<oh yea />");
         };
         
+        // Get the picture url of the student.
+        $scope.getStudentPicture = function() {
+          if(!$scope.emptyData)
+            return $scope.studentDataModel.race + "_" + $scope.studentDataModel.gender;
+          else return "noData";
+        };
+        
         // Watch the incoming data ('studentDataString') to update values.
         $scope.$watch(function() { return $scope.studentDataString}, function(newVal, oldVal) {
           // If there is a change, then parse the new data.
           if(newVal != oldVal) parseStudentData();
         });
-          
-        window.cc = $scope;
         
         parseStudentData();
       }]
     };
   });
 
-
+  
+  // Directive to debounce an input.
+  // NOTE: This is not my directive.
+  // Source: //stackoverflow.com/questions/21088845/
   app.directive('debounce', ["$timeout", function ($timeout) {
     return {
       restrict: 'A',
@@ -84,6 +88,5 @@
       }
     };
   }]); // debounce
-  
   
 })();

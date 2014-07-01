@@ -4,13 +4,13 @@
   
   var app = angular.module("hogwarts");
   
+  // A Factory to facilitate the management of students.
   app.factory("StudentFactory", ["$q", function($q) {
     var mainStudents = [];
     
     var getStudents = function() {
       if(mainStudents.length === 0) {
         var deffered = $q.defer();
-        console.log("$http call");
         mainStudents = _mainStudentList;
         deffered.resolve(mainStudents);
         return deffered.promise;
@@ -24,7 +24,7 @@
     
     var addStudent = function(newStudent) {
       if(mainStudents.length === 0)
-        getStudents();
+        getStudents(); // should attach .then()
       
       var deffered = $q.defer();
       mainStudents.students.push(newStudent);
@@ -34,7 +34,7 @@
     
     var deleteStudent = function(studentIndex) {
       if(mainStudents.length === 0)
-        getStudents();
+        getStudents(); // should attach .then()
       
       var deffered = $q.defer();
       mainStudents.students.splice(studentIndex, 1);
@@ -47,9 +47,11 @@
       addStudent: addStudent,
       deleteStudent: deleteStudent
     } 
+    
   }]);
 
 
+  // A Factory to give access to enrollment config files.
   app.factory("EnrollConfig", ["$http", function($http) {
     var configUrl = "/temp/enrollConfig.json";
     var newStudentUrl = "/temp/newStudent.json";
@@ -66,6 +68,7 @@
       getConfig: getConfigObject,
       getStudentModel: getNewStudentModel
     };
+    
   }]);
   
 })();

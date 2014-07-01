@@ -4,6 +4,7 @@
   
   var app = angular.module("hogwarts");
   
+  // Filter students by their house.
   app.filter("studentHouseFilter", function() {
     
     return function(items, searchModel) {
@@ -32,9 +33,11 @@
       
       return out;
     }
+    
   });
   
   
+  // Filter students by theirn name (or substring of name).
   app.filter("studentNameFilter", function() {
     
     return function(items, searchModel) {
@@ -61,6 +64,7 @@
       
       return out;
     }
+    
   });
   
 })();

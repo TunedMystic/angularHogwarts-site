@@ -84,13 +84,12 @@ input[type="number"] {
   height: 22px;
   width: 100%;
   z-index: 9;
-  background-color: #000000; }
+  background-color: #2C0F0F; }
 
 #site-header {
   position: relative;
   background-color: #5E3E25;
-  background-image: url("../misc/pattern_002.png");
-  background-image: url("../misc/pattern_005.png"); }
+  background-image: url("../img/header-pattern.png"); }
   #site-header h2 {
     font-family: Dutch;
     font-size: 40px;
@@ -113,13 +112,13 @@ input[type="number"] {
   #site-header .header-divider {
     width: 100%;
     height: 30px;
-    background-color: #3C221B; }
+    background-color: #1B0F0C; }
 
 .banner {
   position: absolute;
   z-index: 4;
   top: 0;
-  background-image: url("../misc/banner.png");
+  background-image: url("../img/hogwarts-banner.png");
   width: 200px;
   height: 400px; }
 
@@ -149,7 +148,7 @@ input[type="number"] {
 #footer-divider-quote {
   background-color: #0C1020;
   background-color: #171924;
-  background-image: url("../misc/pattern_007.png"); }
+  background-image: url("../img/footer-pattern.png"); }
   #footer-divider-quote h2 {
     text-align: center;
     margin: 0px;
@@ -166,16 +165,26 @@ input[type="number"] {
 
 .rant {
   padding: 15px 40px;
-  padding-top: 30px;
+  padding-top: 50px;
   font-size: 26px; }
   .rant .smaller {
     font-size: 18px; }
+  .rant .narrow {
+    padding: 0px 40px; }
+  .rant .well {
+    background-color: #29385F;
+    border: none;
+    margin-bottom: 0px; }
   .rant .angular {
     color: #f51a68; }
   .rant .web {
     color: #8AD33B; }
   .rant .yellow {
-    color: #E0CA57; }
+    color: #E0D228; }
+  .rant .magic-person {
+    color: #f89e17; }
+  .rant .angular-hp-logos {
+    padding: 45px 0px; }
 
 .angular-view {
   padding-top: 15px; }
@@ -205,9 +214,10 @@ input[type="number"] {
   border-radius: 3px;
   border: 1px solid #725943;
   background-color: #D1B58A;
-  background-image: url("../misc/noise.png");
+  background-image: url("../img/noise.png");
   overflow: auto;
-  max-height: 428px; }
+  max-height: 428px;
+  padding-bottom: 8px; }
 .angular-view.students .filtered-student-list {
   padding-top: 10px;
   padding-left: 0px;
@@ -246,15 +256,34 @@ input[type="number"] {
   margin-right: 20px; }
 .angular-view.enroll .text-normal {
   font-weight: normal; }
+.angular-view.enroll .enroll-offer {
+  margin-bottom: 60px;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid #885a4b;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  .angular-view.enroll .enroll-offer h3 {
+    margin: 0; }
+  .angular-view.enroll .enroll-offer p {
+    padding-top: 20px;
+    font-size: 20px;
+    color: #C2140D;
+    text-shadow: 2px 2px 2px rgba(131, 115, 115, 0.44); }
+  .angular-view.enroll .enroll-offer .albus {
+    color: #632DA8;
+    font-weight: bold; }
 
 .student-directive {
   height: 220px;
   border-style: solid;
   border-width: 15px;
-  -moz-border-image: url("../misc/directive-student-border1.png") 15 round;
-  -webkit-border-image: url("../misc/directive-student-border1.png") 15 round;
-  -o-border-image: url("../misc/directive-student-border1.png") 15 round;
-  border-image: url("../misc/directive-student-border1.png") 15 round; }
+  -moz-border-image: url("../img/directive-student-border.png") 15 round;
+  -webkit-border-image: url("../img/directive-student-border.png") 15 round;
+  -o-border-image: url("../img/directive-student-border.png") 15 round;
+  border-image: url("../img/directive-student-border.png") 15 round; }
 
 .student-directive .no-student p {
   font-family: King;
@@ -286,7 +315,8 @@ input[type="number"] {
         padding: 2px 10px;
         line-height: 1; }
     .student-directive-display li img {
-      vertical-align: inherit !important; }
+      vertical-align: inherit !important;
+      border: 2px solid #441b1b; }
 
 .student-directive .simpleX {
   color: #757575; }
@@ -298,14 +328,14 @@ input[type="number"] {
 
 body {
   background-color: #e9e9e9;
-  background-image: url("../misc/webtreats_stone_32.jpg");
+  background-image: url("../img/site-background.jpg");
   font-family: Andika;
   font-size: 17px; }
 
 #view-container {
   position: relative;
   height: 620px;
-  background-image: url("../misc/pattern_177.png"); }
+  background-image: url("../img/paper-pattern.png"); }
 
 .container-fluid {
   margin-right: auto;

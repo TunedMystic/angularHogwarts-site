@@ -12,16 +12,14 @@
 
 body {
   background-color: #e9e9e9;
-  //background-image: url("http://www.hdwallpapers.in/walls/harry_potter_and_the_half_blood_prince-wide.jpg");
-  background-image: url("../misc/webtreats_stone_32.jpg");
-  //background-repeat: no-repeat;
+  background-image: url("../img/site-background.jpg");
   @include main-font();
 }
 
 #view-container {
   position: relative;
   height: 620px;
-  background-image: url("../misc/pattern_177.png");
+  background-image: url("../img/paper-pattern.png");
 }
 
 // Override the default 'container-fluid' class

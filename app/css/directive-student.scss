@@ -7,7 +7,7 @@
   border-image: url($img) 15 round;
 }
 
-$dir-stu-border-img: "../misc/directive-student-border1.png";
+$dir-stu-border-img: "../img/directive-student-border.png";
 
 .student-directive {
   height: 220px;
@@ -62,6 +62,7 @@ $dir-stu-border-img: "../misc/directive-student-border1.png";
     
     img {
       vertical-align: inherit !important;
+      border: 2px solid rgb(68, 27, 27);
     }
   }
 }

@@ -1,9 +1,4 @@
 
-// TEMPORARY!!
-.angular-view {
-  //background-color: #AAAAAA;
-}
-
 .angular-view {
   padding-top: 15px;
   
@@ -26,7 +21,6 @@
   }
   
   .filter-panel {    
-    //border: 1px solid black;
     .filter-title {
       margin-bottom: 12px;
       margin-top: 10px;
@@ -48,9 +42,10 @@
     @include round-corners(3px);
     border: 1px solid #725943;
     background-color: #D1B58A;
-    background-image: url("../misc/noise.png");
+    background-image: url("../img/noise.png");
     overflow: auto; // enable scrolling.
     max-height: 428px;
+    padding-bottom: 8px;
   }
   
   .students-list-inner {
@@ -120,5 +115,32 @@
   
   .text-normal {
     font-weight: normal;
+  }
+  
+  .enroll-offer {
+    margin-bottom: 60px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid rgb(136, 90, 75);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    h3 {
+      margin: 0;
+    }
+    
+    p {
+      padding-top: 20px;
+      font-size: 20px;
+      color: #C2140D;
+      text-shadow: 2px 2px 2px rgba(131, 115, 115, 0.44);
+    }
+    
+    .albus {
+      color: #632DA8;
+      font-weight: bold;
+    }
   }
 }
